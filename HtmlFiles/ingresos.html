@@ -23,6 +23,7 @@
     </select>
     <button onclick="agregarIngreso()">Agregar Ingreso</button>
     <button onclick="guardarIngresos()">Guardar y regresar</button>
+    <button onclick="regresar()">Regresar</button>
     <table>
         <thead>
         <tr>
@@ -118,13 +119,14 @@
         alert('Ingresos guardados correctamente.');
     }*/
 
-    function cargarIngresos() {
+   /* function cargarIngresos() {
         const ingresosGuardados = localStorage.getItem('ingresos');
+        
         if (ingresosGuardados) {
             ingresos = JSON.parse(ingresosGuardados);
             actualizarTabla();
         }
-    }
+    }*/
 
     window.onload = cargarIngresos;
 </script>

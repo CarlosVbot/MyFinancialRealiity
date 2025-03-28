@@ -1,3 +1,21 @@
 {
+  "0": {
+    "descripcion": "salario",
+    "cantidad": "5000",
+    "frecuencia": "mensual",
+    "tipo": "ingreso"
+  },
+  "1": {
+    "descripcion": "eeeee",
+    "cantidad": "1111111",
+    "frecuencia": "diario",
+    "tipo": "ingreso"
+  },
+  "2": {
+    "descripcion": "asasas",
+    "cantidad": "2",
+    "frecuencia": "diario",
+    "tipo": "ingreso"
+  },
   "nombre": "Carlos"
 }

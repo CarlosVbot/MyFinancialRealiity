@@ -9,6 +9,7 @@ contextBridge.exposeInMainWorld('electron', {
     },
     guardarLineas: () => ipcRenderer.invoke('comprobar'),
     agregarIngreso: () => ipcRenderer.invoke('agregar-ingreso'),
+    cargarIngresos: () => ipcRenderer.invoke('comprobar-ingresos'),
     ventanaMain: () => ipcRenderer.send('ventana-main'),
 });
 

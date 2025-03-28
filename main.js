@@ -7,6 +7,7 @@ const windows = {};
 const windowConfig = {
     width: 1800,
     height: 1600,
+    fullscreen: true,
     webPreferences: {
         preload: path.join(__dirname, 'preload.js')
     }
@@ -40,7 +41,7 @@ function createSecondWindow() {
     });
 
     windows.second.loadFile('./HtmlFiles/ingresos.html');
-
+    windows.second.webContents.openDevTools();
     windows.second.on('closed', () => {
         windows.second = null;
     });
@@ -115,6 +116,43 @@ ipcMain.on('guardar-en-json', (event, nuevosDatos) => {
                 return;
             }
             console.log('Datos guardados con éxito.');
+        });
+    });
+});
+
+ipcMain.handle('comprobar-ingresos', async (event) => {
+    const filePath = path.join(__dirname, './data/Data.json');
+
+    return new Promise((resolve, reject) => {
+        fs.readFile(filePath, 'utf8', (err, fileData) => {
+            if (err) {
+                console.error('Error leyendo el archivo:', err);
+                reject(err);
+                return;
+            }
+            let jsonData = {};
+            try {
+                jsonData = JSON.parse(fileData);
+                var Objingresos =[]
+                for( key in jsonData){
+                    if(typeof jsonData[key] === 'object'){
+                        if(jsonData[key].tipo === 'ingreso' ){
+                            Objingresos.push({
+                                "descripcion": jsonData[key].descripcion,
+                                "cantidad": jsonData[key].cantidad,
+                                "frecuencia": jsonData[key].frecuencia,
+                                "tipo": "ingreso"
+                            })
+                        }
+                    }
+                  }
+
+            } catch (e) {
+                console.log("Error parseando JSON:", e);
+                reject(e);
+                return;
+            }
+            resolve(Objingresos);
         });
     });
 });
