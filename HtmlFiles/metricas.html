@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Financiero</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link rel="stylesheet" href="../CssFiles/metricas.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Dashboard Financiero</h1>
+        <div class="user-info">
+            <div class="user-name" id="user-name">Usuario</div>
+            <div>Resumen de tus finanzas</div>
+        </div>
+    </header>
+
+    <div class="summary-cards">
+        <div class="summary-card income">
+            <div class="summary-card-title">Ingresos totales</div>
+            <div class="summary-card-value" id="total-income">$0</div>
+        </div>
+        <div class="summary-card expense">
+            <div class="summary-card-title">Gastos totales</div>
+            <div class="summary-card-value" id="total-expense">$0</div>
+        </div>
+        <div class="summary-card net">
+            <div class="summary-card-title">Balance neto</div>
+            <div class="summary-card-value" id="net-balance">$0</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="view-options">
+            <button class="btn btn-primary btn-active" data-view="mensual">Mensual</button>
+            <button class="btn btn-outline" data-view="anual">Anual</button>
+            <button class="btn btn-outline" data-view="diario">Diario</button>
+            <button class="btn btn-outline" data-view="semanal">Semanal</button>
+        </div>
+        <div>
+            <select id="chart-type" class="select-style">
+                <option value="bar">Gráfico de Barras</option>
+                <option value="pie">Gráfico Circular</option>
+                <option value="doughnut">Gráfico de Dona</option>
+                <option value="line">Gráfico de Líneas</option>
+            </select>
+        </div>
+        <div>
+            <button onclick="regresar()">Regresar</button>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Distribución de Ingresos y Gastos</div>
+            </div>
+            <canvas id="mainChart"></canvas>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Comparación por Frecuencia</div>
+            </div>
+            <canvas id="frequencyChart"></canvas>
+        </div>
+    </div>
+
+    <div class="card transactions">
+        <div class="card-header">
+            <div class="card-title">Transacciones</div>
+        </div>
+        <table id="transactions-table">
+            <thead>
+            <tr>
+                <th>Descripción</th>
+                <th>Tipo</th>
+                <th>Frecuencia</th>
+                <th>Cantidad</th>
+                <th>Cantidad ajustada</th>
+            </tr>
+            </thead>
+            <tbody id="transactions-body">
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="../renderFiles/rendermetricas.js"></script>
+</body>
+</html>

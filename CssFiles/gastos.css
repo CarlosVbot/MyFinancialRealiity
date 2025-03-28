@@ -1,0 +1,122 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e1e; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    color: #e17837; /* Verde para el título */
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: #2d2d2d; /* Fondo del contenedor */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 800px;
+}
+
+/* Estilos para los inputs y select */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #3d3d3d; /* Fondo oscuro para inputs */
+    color: #ffffff; /* Texto blanco */
+    font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #e17837; /* Borde verde al enfocar */
+    outline: none;
+}
+
+/* Estilos para los botones */
+button {
+    background-color: #e17837; /* Verde para botones */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff0000; /* Verde más oscuro al pasar el mouse */
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #e17837; /* Verde para el encabezado de la tabla */
+    color: white;
+}
+
+tr:hover {
+    background-color: #3d3d3d; /* Fondo oscuro al pasar el mouse */
+}
+
+/* Estilos para los botones de acciones */
+td button {
+    background-color: #f44336; /* Rojo para el botón de eliminar */
+    margin-left: 5px;
+}
+
+td button:nth-child(1) {
+    background-color: #2196F3; /* Azul para el botón de editar */
+}
+
+td button:hover {
+    opacity: 0.8; /* Efecto de opacidad al pasar el mouse */
+}
+
+/* Estilos para el salario diario */
+td:nth-child(4) {
+    color: #e17837; /* Verde para el salario diario */
+    font-weight: bold;
+}
+
+/* Estilos para el mensaje de alerta */
+.alert {
+    background-color: #f44336; /* Rojo para mensajes de alerta */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    display: none;
+}
+
+.alert.show {
+    display: block;
+}

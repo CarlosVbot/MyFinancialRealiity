@@ -37,7 +37,7 @@
         </tbody>
     </table>
 </div>
-<script src="../renderersec.js"></script>
+<script src="../renderFiles/renderersec.js"></script>
 <script>
     let ingresos = [];
 
@@ -114,21 +114,6 @@
         actualizarTabla();
     }
 
-   /* function guardarIngresos() {
-        localStorage.setItem('ingresos', JSON.stringify(ingresos));
-        alert('Ingresos guardados correctamente.');
-    }*/
-
-   /* function cargarIngresos() {
-        const ingresosGuardados = localStorage.getItem('ingresos');
-        
-        if (ingresosGuardados) {
-            ingresos = JSON.parse(ingresosGuardados);
-            actualizarTabla();
-        }
-    }*/
-
-    window.onload = cargarIngresos;
 </script>
 </body>
 </html>

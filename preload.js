@@ -7,9 +7,17 @@ contextBridge.exposeInMainWorld('electron', {
     openSecondWindow: () => {
         ipcRenderer.send('open-second-window');
     },
+    openGastosWindow: () => {
+        ipcRenderer.send('open-gastos-window');
+    },
+    openmetricasWindow: () => {
+        ipcRenderer.send('open-metricas-window');
+    },
     guardarLineas: () => ipcRenderer.invoke('comprobar'),
     agregarIngreso: () => ipcRenderer.invoke('agregar-ingreso'),
     cargarIngresos: () => ipcRenderer.invoke('comprobar-ingresos'),
+    cargarGastos: () => ipcRenderer.invoke('comprobar-gastos'),
+    obtenerDatos: () => ipcRenderer.invoke('obtener-metricas-datos'),
     ventanaMain: () => ipcRenderer.send('ventana-main'),
 });
 
